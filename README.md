@@ -7,7 +7,7 @@ An intelligent event management system powered by AI (OpenAI GPT-4o or Anthropic
 AEP-Claude is an event-driven automation platform that combines:
 - **Natural Language Event Creation** - Create scheduled events through chat
 - **Intelligent Event Activation** - AI matches requests to events ("send mail to Desi" → activates hello-desi-email)
-- **Automated Email Sending** - Gmail SMTP integration via Node.js nodemailer
+- **Automated Email Sending** - Gmail SMTP integration via Python
 - **Interactive Web UI** - Flask-based dashboard with real-time event monitoring
 - **Flexible Scheduling** - Natural language schedules ("every 2 minutes", "every Tuesday at 9 AM")
 
@@ -20,8 +20,8 @@ AEP-Claude is an event-driven automation platform that combines:
 - **Dynamic Actions**: Fire, activate, deactivate, or delete events through chat
 
 ### 📧 Email Automation
-- **Centralized Email Script**: Single Node.js script serves all email events
-- **Gmail Integration**: Send emails using Gmail SMTP with app passwords
+- **Gmail SMTP Integration**: Send emails using Gmail with app-specific passwords
+- **Microsoft Graph Support**: Alternative integration for Office 365 (see graph_mail.py)
 - **Template Support**: Markdown-based email templates and recipient lists
 - **Real-time Logging**: Track every email sent with timestamps and status
 
@@ -55,10 +55,10 @@ AEP-Claude is an event-driven automation platform that combines:
 └─────────────────────┬───────────────────────────────────┘
                       │
 ┌─────────────────────▼───────────────────────────────────┐
-│          Email Service (Node.js + nodemailer)           │
-│  • Centralized send_mail.js script                      │
+│       Email Service (gmail_mail.py / graph_mail.py)     │
+│  • Gmail SMTP (simple app password auth)               │
+│  • Microsoft Graph (optional, OAuth device flow)        │
 │  • Reads event-specific recipients & templates          │
-│  • Gmail SMTP integration                               │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -69,6 +69,8 @@ AEP-Claude/
 ├── app.py                      # Main Flask application (OpenAI GPT-4o)
 ├── main.py                     # Alternative Gradio UI (Anthropic Claude)
 ├── event_engine.py             # Core event scheduler and parser
+├── gmail_mail.py               # Gmail SMTP email sender
+├── graph_mail.py               # Microsoft Graph email sender (optional)
 ├── templates/
 │   └── index.html             # Flask UI template
 ├── events/                     # Event definitions folder
@@ -79,15 +81,13 @@ AEP-Claude/
 │   │       └── mail-template.md  # Email body template
 │   ├── send-team-mail/
 │   │   ├── EVENT.md
-│   │   ├── scripts/
-│   │   │   └── send_mail.js   # Centralized email script (Node.js)
 │   │   └── references/
 │   │       ├── team-members.md
 │   │       └── mail-template.md
 │   └── sent-mail-joro/         # Additional events...
 ├── .env                        # Environment variables (API keys, Gmail credentials)
+├── .env.example               # Template for environment variables
 ├── requirements.txt            # Python dependencies
-├── package.json               # Node.js dependencies
 └── README.md                  # This file
 ```
 
@@ -95,7 +95,6 @@ AEP-Claude/
 
 ### Prerequisites
 - Python 3.12+
-- Node.js 18+
 - Gmail account with App Password
 - OpenAI API key (or Anthropic API key for main.py)
 
@@ -103,36 +102,32 @@ AEP-Claude/
 
 1. **Clone and navigate to the project**
 ```bash
-cd AEP-Claude
+git clone https://github.com/HadjievK/event-driven-agent.git
+cd event-driven-agent
 ```
 
 2. **Install Python dependencies**
 ```bash
 python -m venv .venv
 .venv\Scripts\activate  # Windows
+source .venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 ```
 
-3. **Install Node.js dependencies**
-```bash
-npm install
-```
-
-4. **Configure environment variables**
-Create a `.env` file:
+3. **Configure environment variables**
+Copy `.env.example` to `.env` and fill in your credentials:
 ```env
 # OpenAI API (for app.py)
-OPENAI_API_KEY=sk-proj-...
+OPENAI_API_KEY=sk-proj-your-key-here
 
-# Anthropic API (for main.py)
-ANTHROPIC_API_KEY=sk-ant-...
-
-# Gmail SMTP
-GMAIL_USER=your-email@gmail.com
+# Gmail SMTP Configuration
+# 1. Enable 2-Step Verification: https://myaccount.google.com/security
+# 2. Generate App Password: https://myaccount.google.com/apppasswords
+GMAIL_USER=your.email@gmail.com
 GMAIL_APP_PASSWORD=your-16-char-app-password
 ```
 
-5. **Run the application**
+4. **Run the application**
 ```bash
 python app.py
 ```
@@ -261,7 +256,8 @@ Your Event Agent
 - **Hot Reload**: New events are added without restart
 
 ### Email System
-- **Centralized Script**: `events/send-team-mail/scripts/send_mail.js` serves all events
+- **Gmail SMTP**: Simple integration using Python's smtplib
+- **Microsoft Graph**: Optional OAuth integration for Office 365 (graph_mail.py)
 - **Event-specific Folders**: Each event has its own `references/` with recipients and templates
 - **UTF-8 Encoding**: Proper handling of special characters
 - **Error Handling**: JSON output with status and message IDs
@@ -323,4 +319,4 @@ This is a demo project. Feel free to fork and customize for your needs!
 
 ---
 
-**Built with ❤️ using OpenAI GPT-4o, Flask, Node.js, and natural language magic**
+**Built with ❤️ using OpenAI GPT-4o, Flask, Python, and natural language magic**
