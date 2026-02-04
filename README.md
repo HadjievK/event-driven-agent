@@ -2,7 +2,7 @@
 
 An intelligent event management system powered by AI (OpenAI GPT-4o or Anthropic Claude) that automatically schedules and executes email notifications through natural language commands.
 
-## 🎯 Overview
+## Overview
 
 AEP-Claude is an event-driven automation platform that combines:
 - **Natural Language Event Creation** - Create scheduled events through chat
@@ -11,27 +11,27 @@ AEP-Claude is an event-driven automation platform that combines:
 - **Interactive Web UI** - Flask-based dashboard with real-time event monitoring
 - **Flexible Scheduling** - Natural language schedules ("every 2 minutes", "every Tuesday at 9 AM")
 
-## ✨ Features
+## Features
 
-### 🤖 AI-Powered Event Management
+### AI-Powered Event Management
 - **Smart Event Matching**: "send mail to desi" automatically activates the right event
 - **Event Creator Skill**: Generate events from natural language descriptions
 - **Active/Inactive States**: Events start inactive, activate on demand
 - **Dynamic Actions**: Fire, activate, deactivate, or delete events through chat
 
-### 📧 Email Automation
+### Email Automation
 - **Gmail SMTP Integration**: Send emails using Gmail with app-specific passwords
 - **Microsoft Graph Support**: Alternative integration for Office 365 (see graph_mail.py)
 - **Template Support**: Markdown-based email templates and recipient lists
 - **Real-time Logging**: Track every email sent with timestamps and status
 
-### 🎨 Web Interface
+### Web Interface
 - **Chat Tab**: Conversational AI interface for event management
 - **Events Tab**: View all loaded events with schedules and status (🟢 Active / 🔴 Inactive)
 - **Event Log Tab**: Real-time firing history with details
 - **Auto-refresh**: Dashboard updates every 3 seconds
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -62,7 +62,7 @@ AEP-Claude is an event-driven automation platform that combines:
 └─────────────────────────────────────────────────────────┘
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AEP-Claude/
@@ -91,7 +91,7 @@ AEP-Claude/
 └── README.md                  # This file
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.12+
@@ -134,7 +134,7 @@ python app.py
 
 Open http://localhost:7860 in your browser.
 
-## 📝 Usage Examples
+## Usage Examples
 
 ### Creating Events via Chat
 
@@ -208,11 +208,11 @@ Best regards,
 Your Event Agent
 ```
 
-## 🎛️ Configuration
+## Configuration
 
 ### Event States
-- **🔴 INACTIVE** (default): Event exists but won't fire automatically
-- **🟢 ACTIVE**: Event fires on schedule
+- **INACTIVE** (default): Event exists but won't fire automatically
+- **ACTIVE**: Event fires on schedule
 - Use chat commands to activate/deactivate events
 
 ### Available Actions
@@ -232,7 +232,7 @@ Your Event Agent
 - `every Monday at 10:30`
 - `every Tuesday at 14:00`
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Two UI Options
 
@@ -262,7 +262,7 @@ Your Event Agent
 - **UTF-8 Encoding**: Proper handling of special characters
 - **Error Handling**: JSON output with status and message IDs
 
-## 🛡️ Security Notes
+## Security Notes
 
 1. **Gmail App Passwords**: Use app-specific passwords, not your main password
 2. **API Keys**: Never commit `.env` to version control
@@ -271,7 +271,7 @@ Your Event Agent
    Add-MpPreference -ExclusionPath "C:\Users\YourUser\AEP-Claude\.venv"
    ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **Port 7860 already in use:**
 ```bash
@@ -291,16 +291,16 @@ Get-Process python | Stop-Process -Force
 **Events not firing:**
 - Events are INACTIVE by default
 - Activate via chat: "send mail to [recipient]"
-- Check Events tab for 🟢 ACTIVE status
+- Check Events tab for ACTIVE status
 
-## 📊 Monitoring
+## Monitoring
 
 - **Events Tab**: View all loaded events and their status
 - **Event Log**: Real-time log of all firings with timestamps
 - **Chat Interface**: Query event status anytime
 - **Auto-refresh**: Dashboard updates every 3 seconds
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] Multi-channel support (Slack, Teams, Discord)
 - [ ] Conditional event triggers (if/then logic)
@@ -309,14 +309,14 @@ Get-Process python | Stop-Process -Force
 - [ ] Database persistence for event log
 - [ ] Metrics and analytics dashboard
 
-## 📄 License
+## License
 
 MIT License - feel free to modify and extend!
 
-## 🤝 Contributing
+## Contributing
 
 This is a demo project. Feel free to fork and customize for your needs!
 
 ---
 
-**Built with ❤️ using OpenAI GPT-4o, Flask, Python, and natural language magic**
+**Built with OpenAI GPT-4o, Flask, Python, and natural language processing**
