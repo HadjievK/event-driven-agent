@@ -10,7 +10,7 @@ WHY Device Code Flow:
 FIRST RUN:
   📱 Opening https://microsoft.com/devicelogin …
      Enter code: ABCD-EFGH
-  → you paste that code, log in with your SAP account, click Accept
+  → you paste that code, log in with your work account, click Accept
   → tokens saved to token_cache.json
   → never asked again (refresh token lasts ~90 days)
 
@@ -37,7 +37,7 @@ USER_EMAIL   = os.environ.get("GRAPH_USER_EMAIL", "").strip()
 PUBLIC_CLIENT_ID = "1b730df6-6f10-4745-9e74-79e99bc38429"   # "Microsoft Graph Explorer" public app
 
 # Tenant — /organizations/ works for any corporate M365 tenant.
-# If SAP blocks that too, set GRAPH_TENANT_ID in .env (see below).
+# If your organization blocks that, set GRAPH_TENANT_ID in .env (see below).
 TENANT_ID        = os.environ.get("GRAPH_TENANT_ID", "").strip() or "organizations"
 DEVICE_CODE_URL  = f"https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/devicecode"
 TOKEN_URL        = f"https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token"
