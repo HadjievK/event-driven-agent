@@ -1,0 +1,36 @@
+# Environment variables - contains API keys and secrets
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# OAuth token cache - contains access/refresh tokens
+token_cache.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Event logs
+event_log.json
+
+# Node modules (if any)
+node_modules/
+package-lock.json
