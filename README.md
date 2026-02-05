@@ -100,7 +100,7 @@ AEP-Claude/
 │   ├── weekly-report-email/
 │   │   ├── EVENT.md           # Event configuration (schedule, action)
 │   │   ├── scripts/           # Event-specific scripts (optional)
-│   │   ├── skills/                     # AI skills and agents (optional)
+│   │   ├── skills/            # Agent Skills (optional)
 │   │   ├── assets/            # Additional resources (optional)
 │   │   └── references/        # Data files and templates
 │   │       ├── team-members.md   # Recipients list
