@@ -55,6 +55,20 @@ This AI event-driven Agent acts like an automation platform that combines:
 
 ## Architecture
 
+### Core Component: Event Engine
+
+The **Event Engine** (`event_engine.py`) is the heart of this system, acting as an intelligent scheduler and orchestrator that bridges natural language commands with automated actions.
+
+**Key Capabilities:**
+- **Natural Language Schedule Parsing**: Converts human-readable schedules like "every Monday at 9 AM" or "every 2 minutes" into precise execution timers
+- **Asynchronous Event Loop**: Runs continuously in a background thread with 1-second tick intervals, checking all active events for execution
+- **State Management**: Maintains event states (ACTIVE/INACTIVE) ensuring only explicitly activated events fire automatically
+- **MCP Tool Integration**: Dispatches actions to registered tools (currently `mail_send`) with parameter resolution from markdown files
+- **Dynamic Event Discovery**: Automatically scans the `events/` directory, loading new events without requiring restarts
+- **Event Lifecycle Control**: Supports activate, deactivate, fire-once, create, and delete operations through AI commands
+
+The Event Engine operates independently of the web UI, making it suitable for server deployments, containerization, or integration into larger automation workflows.
+
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                     Web UI (Flask)                      │
