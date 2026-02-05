@@ -5,23 +5,23 @@ An intelligent event management system powered by AI (OpenAI GPT-4o or Anthropic
 ## Screenshots
 
 ### Chat Interface
-![Chat Interface](docs/images/pic1.png)
+[![Chat Interface](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic1.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic1.png)
 *Natural language event management through conversational AI*
 
 ### Events Dashboard
-![Events Dashboard](docs/images/pic2.png)
+[![Events Dashboard](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic2.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic2.png)
 *Real-time view of all loaded events with schedules and status*
 
 ### Event Configuration
-![Event Configuration](docs/images/pic3.jpg)
+[![Event Configuration](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic3.jpg)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic3.jpg)
 *Event details and configuration settings*
 
 ### Event Logs
-![Event Logs](docs/images/pic4.png)
+[![Event Logs](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic4.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic4.png)
 *Track all event executions with timestamps and results*
 
 ### Email Integration
-![Email Integration](docs/images/pic5.png)
+[![Email Integration](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic5.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic5.png)
 *Gmail SMTP integration with automated email sending*
 
 ## Overview
@@ -162,34 +162,33 @@ Open http://localhost:7860 in your browser.
 
 **Example 1: Quick email event**
 ```
-User: Send email every 5 minutes to john@example.com with subject "Status Update" 
-      and body "System is running"
+User: Send email every Monday to my team with Weekly report status."
 
 AI: I'll create an event for you...
     <aep_action>
-    {"action": "create", "name": "status-update", "description": "Send status every 5 minutes", 
-     "schedule": "every 5 minutes", "recipients": "john@example.com", 
-     "subject": "Status Update", "body": "System is running"}
+    {"action": "create", "name": "status-update", "description": "Send status every Monday to my team with our report", 
+     "schedule": "every Monday", "recipients": "team@example.com", 
+     "subject": "SWeekly report", "body": "Weekly report"}
     </aep_action>
 ```
 
 **Example 2: Activate existing event**
 ```
-User: Send mail to Desi
+User: Send mail to My team
 
-AI: I'll activate the hello-desi-email event...
+AI: I'll activate the weekly-report-email event...
     <aep_action>
-    {"action": "activate", "name": "hello-desi-email"}
+    {"action": "activate", "name": "weekly-report-email"}
     </aep_action>
 ```
 
 **Example 3: Stop sending emails**
 ```
-User: Stop sending mail to Desi
+User: Stop sending mail to my team
 
-AI: I'll deactivate the hello-desi-email event...
+AI: I'll deactivate the weekly-report-email event...
     <aep_action>
-    {"action": "deactivate", "name": "hello-desi-email"}
+    {"action": "deactivate", "name": "weekly-report-email"}
     </aep_action>
 ```
 
