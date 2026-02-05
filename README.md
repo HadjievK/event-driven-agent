@@ -99,13 +99,13 @@ AEP-Claude/
 ├── events/                     # Event definitions folder
 │   ├── weekly-report-email/
 │   │   ├── EVENT.md           # Event configuration (schedule, action)
-│   │   └── references/
+│   │   ├── scripts/           # Event-specific scripts (optional)
+│   │   ├── skills/                     # AI skills and agents (optional)
+│   │   ├── assets/            # Additional resources (optional)
+│   │   └── references/        # Data files and templates
 │   │       ├── team-members.md   # Recipients list
 │   │       └── mail-template.md  # Email body template
-│   ├── # Additional events...
-│   ├── # Additional events...
-│   ├── # Additional events... 
-│   ├── # Additional events...
+│   └── # Additional events...
 │     
 │        
 ├── .env                        # Environment variables (API keys, Gmail credentials)
