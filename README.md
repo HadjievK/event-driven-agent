@@ -2,33 +2,20 @@
 
 An intelligent event management system powered by AI (OpenAI GPT-4o or Anthropic Claude) that automatically schedules and executes email notifications through natural language commands.
 
-## Screenshots
+## [Screenshots](https://github.com/HadjievK/event-driven-agent/tree/master/Screenshots)
 
-### Chat Interface
-[![Chat Interface](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic1.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic1.png)
-*Natural language event management through conversational AI*
-
-### Events Dashboard
-[![Events Dashboard](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic2.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic2.png)
-*Real-time view of all loaded events with schedules and status*
-
-### Event Configuration
-[![Event Configuration](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic3.jpg)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic3.jpg)
-*Event details and configuration settings*
-
-### Event Logs
-[![Event Logs](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic4.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic4.png)
-*Track all event executions with timestamps and results*
-
-### Email Integration
-[![Email Integration](https://raw.githubusercontent.com/HadjievK/event-driven-agent/master/Screenshots/pic5.png)](https://github.com/HadjievK/event-driven-agent/blob/master/Screenshots/pic5.png)
-*Gmail SMTP integration with automated email sending*
+View application screenshots demonstrating the agent's functionality:
+- **Chat Interface** - Natural language event management through conversational AI
+- **Events Dashboard** - Real-time view of all loaded events with schedules and status
+- **Event Configuration** - Event details and configuration settings
+- **Event Logs** - Track all event executions with timestamps and results
+- **Email Integration** - Gmail SMTP integration with automated email sending
 
 ## Overview
 
 This AI event-driven Agent acts like an automation platform that combines:
 - **Natural Language Event Creation** - Create scheduled events through chat
-- **Intelligent Event Activation** - AI matches requests to events ("send mail to Desi" → activates hello-desi-email)
+- **Intelligent Event Activation** - AI matches requests to events ("send mail to my team" → activates weekly-report-email)
 - **Automated Email Sending** - Gmail SMTP integration via Python
 - **Interactive Web UI** - Flask-based dashboard with real-time event monitoring
 - **Flexible Scheduling** - Natural language schedules ("every 2 minutes", "every Tuesday at 9 AM")
@@ -36,7 +23,7 @@ This AI event-driven Agent acts like an automation platform that combines:
 ## Features
 
 ### AI-Powered Event Management
-- **Smart Event Matching**: "send mail to desi" automatically activates the right event
+- **Smart Event Matching**: "send mail to my team" automatically activates the right event
 - **Event Creator Skill**: Generate events from natural language descriptions
 - **Active/Inactive States**: Events start inactive, activate on demand
 - **Dynamic Actions**: Fire, activate, deactivate, or delete events through chat
@@ -110,17 +97,17 @@ AEP-Claude/
 ├── templates/
 │   └── index.html             # Flask UI template
 ├── events/                     # Event definitions folder
-│   ├── hello-desi-email/
+│   ├── weekly-report-email/
 │   │   ├── EVENT.md           # Event configuration (schedule, action)
 │   │   └── references/
 │   │       ├── team-members.md   # Recipients list
 │   │       └── mail-template.md  # Email body template
 │   ├── send-team-mail/
-│   │   ├── EVENT.md
-│   │   └── references/
-│   │       ├── team-members.md
-│   │       └── mail-template.md
-│   └── sent-mail-joro/         # Additional events...
+│   │   
+│   │   
+│   │       
+│   │       
+│   └         # Additional events...
 ├── .env                        # Environment variables (API keys, Gmail credentials)
 ├── .env.example               # Template for environment variables
 ├── requirements.txt            # Python dependencies
@@ -180,7 +167,7 @@ User: Send email every Monday to my team with Weekly report status."
 
 AI: I'll create an event for you...
     <aep_action>
-    {"action": "create", "name": "status-update", "description": "Send status every Monday to my team with our report", 
+    {"action": "create", "name": "weekly-report-email", "description": "Send status every Monday to my team with our report", 
      "schedule": "every Monday", "recipients": "team@example.com", 
      "subject": "SWeekly report", "body": "Weekly report"}
     </aep_action>
