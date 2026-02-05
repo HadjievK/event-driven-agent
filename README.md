@@ -102,12 +102,12 @@ AEP-Claude/
 │   │   └── references/
 │   │       ├── team-members.md   # Recipients list
 │   │       └── mail-template.md  # Email body template
-│   ├── send-team-mail/
-│   │   
-│   │   
-│   │       
-│   │       
-│   └         # Additional events...
+│   ├── # Additional events...
+│   ├── # Additional events...
+│   ├── # Additional events... 
+│   ├── # Additional events...
+│     
+│        
 ├── .env                        # Environment variables (API keys, Gmail credentials)
 ├── .env.example               # Template for environment variables
 ├── requirements.txt            # Python dependencies
@@ -198,11 +198,11 @@ AI: I'll deactivate the weekly-report-email event...
 Create `events/my-event/EVENT.md`:
 ```yaml
 ---
-name: my-event
-description: >
-  My custom scheduled event
+name: weekly-report-email
+description: 
+  Weekly report to my team sending every Monday
 type: scheduled
-schedule: every 10 minutes
+schedule: every Monday
 active: false
 action:
   mcp: mail_send
