@@ -238,13 +238,13 @@ Your Event Agent
 - Use chat commands to activate/deactivate events
 
 ### Available Actions
-| Action | Command | Description |
-|--------|---------|-------------|
-| `activate` | "send mail to desi" | Start event firing on schedule |
-| `deactivate` | "stop sending to desi" | Stop automatic firing |
-| `fire` | "fire hello-desi-email" | Fire once immediately |
-| `create` | "create event..." | Generate new event |
-| `delete` | "delete hello-desi-email" | Remove event permanently |
+| Action | Description |
+|--------|-------------|
+| `activate` | Start event firing on schedule |
+| `deactivate` | Stop automatic firing |
+| `fire` | Fire event once immediately |
+| `create` | Generate new event from description |
+| `delete` | Remove event permanently |
 
 ### Schedule Formats
 - `every 2 minutes`
