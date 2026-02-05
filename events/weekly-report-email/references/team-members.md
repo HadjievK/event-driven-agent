@@ -1,5 +1,4 @@
 # Team members — one email per line
 # Lines starting with # are ignored
 
-
-kristiyan.hadjiev@sap.com
+your-team@mail.com

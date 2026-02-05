@@ -1,10 +1,32 @@
-# AEP-Claude: Event-Driven AI Agent
+#  Event-Driven AI Agent
 
 An intelligent event management system powered by AI (OpenAI GPT-4o or Anthropic Claude) that automatically schedules and executes email notifications through natural language commands.
 
+## Screenshots
+
+### Chat Interface
+![Chat Interface](docs/images/pic1.png)
+*Natural language event management through conversational AI*
+
+### Events Dashboard
+![Events Dashboard](docs/images/pic2.png)
+*Real-time view of all loaded events with schedules and status*
+
+### Event Configuration
+![Event Configuration](docs/images/pic3.jpg)
+*Event details and configuration settings*
+
+### Event Logs
+![Event Logs](docs/images/pic4.png)
+*Track all event executions with timestamps and results*
+
+### Email Integration
+![Email Integration](docs/images/pic5.png)
+*Gmail SMTP integration with automated email sending*
+
 ## Overview
 
-AEP-Claude is an event-driven automation platform that combines:
+This AI event-driven Agent acts like an automation platform that combines:
 - **Natural Language Event Creation** - Create scheduled events through chat
 - **Intelligent Event Activation** - AI matches requests to events ("send mail to Desi" → activates hello-desi-email)
 - **Automated Email Sending** - Gmail SMTP integration via Python
